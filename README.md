@@ -2,6 +2,7 @@
 個人的なvimの設定置き場
 
 ## 202305の構成
+<pre>
 .
 ├── init.lua -- vimから読み込ませるinit.lua。lua/core配下のluaファイルを読み込ませる
 ├── log -- ログファイル置き場
@@ -18,6 +19,7 @@
 ├── sessions
 ├── swap
 └── undodir
+</pre>
 
 ## 思想
 - 各種設定ファイルはluaで記載する
