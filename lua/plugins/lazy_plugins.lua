@@ -102,6 +102,12 @@ return {
       require('plugins.config.blamer')
     end,
   },
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('plugins.config.gitsigns')
+    end,
+  },
   -- edit action
   {
     'numToStr/Comment.nvim',
@@ -111,6 +117,27 @@ return {
   },
   {
     'github/copilot.vim',
+  },
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('plugins.config.which-key')
+    end,
+  },
+  -- edit viewing
+  {
+    'andymass/vim-matchup',
+    event = 'CursorMoved',
+    config = function()
+      require('plugins.config.vim-matchup')
+    end,
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('plugins.config.indent-blankline')
+    end,
   },
   -- lsp
   {
@@ -137,6 +164,62 @@ return {
     config = function()
       require('plugins.config.null-ls')
     end,
+  },
+  -- cmp
+  {
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter, CmdlineEnter',
+    config = function()
+      require('plugins.config.nvim-cmp')
+    end,
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/cmp-buffer',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/cmp-path',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/cmp-vsnip',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/cmp-cmdline',
+    event = 'ModeChanged'
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp-document-symbol',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/cmp-calc',
+    event = 'InsertEnter'
+  },
+  {
+    'onsails/lspkind.nvim',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/vim-vsnip',
+    event = 'InsertEnter'
+  },
+  {
+    'hrsh7th/vim-vsnip-integ',
+    event = 'InsertEnter'
+  },
+  {
+    'rafamadriz/friendly-snippets',
+    event = 'InsertEnter'
   },
   -- debugger
   -- {

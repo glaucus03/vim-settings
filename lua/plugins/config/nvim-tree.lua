@@ -104,7 +104,6 @@ require('nvim-tree').setup {
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = false,
-  lsp_diagnostics = true,
   update_focused_file = {
     enable      = false,
     update_cwd  = false,
@@ -117,7 +116,6 @@ require('nvim-tree').setup {
   view = {
     width = 40,
     side = 'left',
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
@@ -126,9 +124,31 @@ require('nvim-tree').setup {
   renderer = {
     highlight_git = true,
     icons = {
+      git_placement = 'signcolumn',
       show = {
         git = true
       },
+      glyphs = {
+        default = '',
+        symlink = '',
+        git = {
+          unstaged = " M",
+          staged = "M ",
+          unmerged = "",
+          renamed = "R",
+          untracked = "??",
+          deleted = " D",
+          ignored = "◌"
+        },
+        folder = {
+          default = "",
+          open = "",
+          symlink = "",
+          empty = "",
+          empty_open = "",
+          symlink_open = "",
+        }
+      }
     },
   },
 diagnostics = {
