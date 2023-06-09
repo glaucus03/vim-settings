@@ -4,7 +4,6 @@ require('nvim-treesitter.configs').setup({
     'c',
     'cpp',
     'css',
-    'dockerfile',
     'go',
     'gomod',
     'html',
@@ -18,6 +17,7 @@ require('nvim-treesitter.configs').setup({
     'yaml',
     'vue',
     'markdown',
+    'cmake',
   },
   highlight = {
     enable = true,

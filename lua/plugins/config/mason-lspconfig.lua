@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local opts = { buffer = ev.buf }
+    local opts = { noremap= true, silent=true, buffer = ev.buf }
     vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', '<leader>ls', vim.diagnostic.open_float, opts)

@@ -58,3 +58,4 @@ end
 SetOptions()
 
 vim.cmd('autocmd FileType * lua SetOptions()')
+vim.opt.runtimepath:append('~/.vim')

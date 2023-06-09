@@ -86,14 +86,20 @@ return {
     end,
   },
   -- git
+  -- {
+  --   'kdheepak/lazygit.nvim',
+  --   dependencies = {
+  --     'nvim-telescope/telescope.nvim',
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  --   config = function()
+  --     require('plugins.config.lazygit')
+  --   end,
+  -- },
   {
-    'kdheepak/lazygit.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim',
-    },
+    'akinsho/toggleterm.nvim',
     config = function()
-      require('plugins.config.lazygit')
+      require('plugins.config.toggleterm')
     end,
   },
   {
