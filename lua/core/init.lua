@@ -6,7 +6,7 @@ vim.cmd('augroup END')
 
 vim.cmd('filetype off')
 vim.cmd('syntax off')
-vim.api.nvim_exec('language en_US', true)
+-- vim.api.nvim_exec('language en_US', true)
 
 
 vim.g.mapleader = " "
@@ -55,6 +55,21 @@ end,
 )
 api.nvim_create_user_command('Todo', function(opts)
   vim.cmd("e ".."~/dev/Todo.md")
+end,
+{}
+)
+api.nvim_create_user_command('Cd', function(opts)
+  vim.cmd("cd%:p:h")
+end,
+{}
+)
+api.nvim_create_user_command('CdVimSetting', function(opts)
+  vim.cmd("cd ~/.vim")
+end,
+{}
+)
+api.nvim_create_user_command('CdDevTmp', function(opts)
+  vim.cmd("cd ~/dev/tmp/")
 end,
 {}
 )

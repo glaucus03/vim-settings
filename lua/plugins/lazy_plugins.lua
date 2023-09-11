@@ -37,12 +37,6 @@ return {
       "NvimTreeFocus",
       "NvimTreeToggle",
     },
-    keys = {
-      "<C-e>",
-      "<cmd>NvimTreeToggle<CR>",
-      noremap = true,
-      mode = 'n',
-    },
     config = function()
       require('plugins.config.nvim-tree')
     end,
@@ -63,6 +57,16 @@ return {
     },
     config = function()
       require('plugins.config.telescope')
+    end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { 
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim" 
+    },
+    config = function()
+      require('plugins.config.telescope-file-browser')
     end,
   },
   -- code layout
@@ -86,16 +90,22 @@ return {
     end,
   },
   -- git
-  -- {
-  --   'kdheepak/lazygit.nvim',
-  --   dependencies = {
-  --     'nvim-telescope/telescope.nvim',
-  --     'nvim-lua/plenary.nvim',
-  --   },
-  --   config = function()
-  --     require('plugins.config.lazygit')
-  --   end,
-  -- },
+  {
+    'kdheepak/lazygit.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('plugins.config.lazygit')
+    end,
+  },
+  {
+    'sindrets/diffview.nvim',
+    config = function()
+      require('plugins.config.diffview')
+    end,
+  },
   {
     'akinsho/toggleterm.nvim',
     config = function()
@@ -122,14 +132,27 @@ return {
     end,
   },
   {
-    'github/copilot.vim',
-  },
-  {
     'folke/which-key.nvim',
     event = 'VeryLazy',
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
     config = function()
       require('plugins.config.which-key')
     end,
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.config.chatgpt")
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   },
   -- edit viewing
   {
@@ -147,29 +170,11 @@ return {
   },
   -- lsp
   {
-    'neovim/nvim-lspconfig',
+    'neoclide/coc.nvim',
     config = function()
-      require('plugins.config.nvim-lspconfig')
+      require('plugins.config.coc-nvim')
     end,
-  },
-  {
-    'williamboman/mason.nvim',
-    build = ':MasonUpdate',
-    config = function()
-      require('plugins.config.mason')
-    end,
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require('plugins.config.mason-lspconfig')
-    end,
-  },
-  {
-    'jose-elias-alvarez/null-ls.nvim',
-    config = function()
-      require('plugins.config.null-ls')
-    end,
+    branch = "release",
   },
   -- cmp
   {

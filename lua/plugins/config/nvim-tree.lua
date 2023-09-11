@@ -163,4 +163,3 @@ diagnostics = {
   },
   on_attach = my_on_attach,
 }
-vim.keymap.set('n', '<c-e>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })

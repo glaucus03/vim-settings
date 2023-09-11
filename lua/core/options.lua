@@ -56,6 +56,7 @@ function SetOptions()
 end
 
 SetOptions()
+vim.cmd('set clipboard+=unnamedplus')
 
 vim.cmd('autocmd FileType * lua SetOptions()')
 vim.opt.runtimepath:append('~/.vim')
